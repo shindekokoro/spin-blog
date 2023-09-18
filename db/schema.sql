@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS spin_blog;
+
+CREATE DATABASE spin_blog;
