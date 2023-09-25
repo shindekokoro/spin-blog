@@ -9,14 +9,14 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password
     });
-
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.username = req.body.username;
 
       return res.status(200).json(dbUserData);
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return res.status(500).json(err);
   }
 });
@@ -43,16 +43,17 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
     }
-
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.username = dbUserData.username;
+      req.session.user_id = dbUserData.id;
 
       return res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return res.status(500).json(err);
   }
 });
