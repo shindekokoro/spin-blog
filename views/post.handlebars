@@ -1,8 +1,14 @@
 <section class='post'>
-  <h3 class='post-title'>{{post.title}}
-    {{user.username}}
-    {{format_time post.updatedAt}}</h3>
-  <p>
+  <header>
+    <div class='post-title'><h3>{{post.title}}</h3></div>
+    <div class='post-author'>
+      <em>By:</em>
+      {{post.user.username}}
+      <em>On:</em>
+      {{format_time post.updatedAt}}
+    </div>
+  </header>
+  <p class='post-body'>
     {{post.content}}
   </p>
 </section>
