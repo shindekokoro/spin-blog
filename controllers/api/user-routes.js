@@ -9,11 +9,14 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password
     });
+    const newUser = dbUserData.get({ plain: true });
+
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.username = req.body.username;
+      req.session.user_id = newUser.id;
 
-      return res.status(200).json(dbUserData);
+      return res.status(200).json(newUser);
     });
   } catch (err) {
     console.error(err);
