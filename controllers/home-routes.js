@@ -5,8 +5,7 @@ const isAuthed = require('../utils/auth');
 // GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const postData = await Post.findAll({});
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const posts = await Post.findAll({ raw: true });
     return res.render('homepage', {
       posts,
       loggedIn: req.session.loggedIn,
@@ -18,14 +17,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Dashboard of all user posts
 router.get('/dashboard', isAuthed, async (req, res) => {
   try {
-    const userPostData = await Post.findAll({
+    const userPosts = await Post.findAll({
       where: {
         user_id: req.session.user_id
-      }
+      },
+      raw: true
     });
-    const userPosts = userPostData.map((post) => post.get({ plain: true }));
     return res.render('dashboard', {
       title: 'Dashboard',
       userPosts,
