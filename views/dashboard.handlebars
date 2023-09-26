@@ -1,3 +1,9 @@
 {{#each userPosts as |post|}}
-{{> user-post-details}}
+    {{> user-post-details}}
 {{/each}}
+{{#unless userPosts}}
+<section class="post">
+    <div class="post-body">You have no blog posts, create a new one.</div>
+</section>
+{{/unless}}
+<script src='./js/post-options.js'></script>
