@@ -24,7 +24,6 @@ router.get('/:id', isAuthed, async (req, res) => {
 // PUT update to blog post
 router.put('/:id', async (req, res) => {
   try {
-    console.log('put?');
     const dbPostData = await Post.update(
       { title: req.body.title, content: req.body.content },
       { where: { id: req.params.id, user_id: req.session.user_id } }

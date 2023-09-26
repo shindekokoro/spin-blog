@@ -1,6 +1,6 @@
 {
   "name": "spin-blog",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Spin up a new blog post with spin blog, meetup up with others and spin up a comment on their posts.",
   "main": "server.js",
   "scripts": {
