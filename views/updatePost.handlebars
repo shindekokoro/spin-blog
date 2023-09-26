@@ -1,0 +1,16 @@
+<section class='post'>
+  <header>
+    <div class='post-title'><h3>{{post.title}}</h3></div>
+    <div class='post-author'>
+      <em>By:</em>
+      {{post.user.username}}<br />
+      <em>On:</em>
+      {{format_time post.updatedAt}}
+    </div>
+  </header>
+  <p class='post-body'>
+    {{post.content}}
+  </p>
+</section>
+
+<script src='../js/comment.js'></script>
