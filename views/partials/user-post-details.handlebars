@@ -1,6 +1,19 @@
 <section class='post'>
-  <header><div class='post-title'>
-      <h4><a href='/blog/{{id}}'>{{title}}</a></h4>
+  <header>
+    <div class='post-title'>
+      <h3><a href='/blog/{{id}}'>{{title}}</a></h3>
+    </div>
+    <div class='post-option'>
+      <button
+        class='post-update btn btn-primary'
+        value='{{id}}'
+        aria-label='update'
+      >✍🏻</button>
+      <button
+        class='post-delete btn btn-primary'
+        value='{{id}}'
+        aria-label='delete'
+      >🗑️</button>
     </div>
   </header>
 </section>
