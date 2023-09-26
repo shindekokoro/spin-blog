@@ -1,16 +1,32 @@
 <section class='post'>
-  <header>
-    <div class='post-title'><h3>{{post.title}}</h3></div>
-    <div class='post-author'>
-      <em>By:</em>
-      {{post.user.username}}<br />
-      <em>On:</em>
-      {{format_time post.updatedAt}}
+  <form class='form post-form'>
+    <div class='form-group'>
+      <label for='post-title'>Title:</label>
+      <input
+        class='form-input'
+        type='text'
+        id='post-title'
+        value='{{post.title}}'
+      />
     </div>
-  </header>
-  <p class='post-body'>
-    {{post.content}}
-  </p>
+    <div class='form-group'>
+      <label for='post-content'>Content:</label>
+      <textarea
+        class='form-input'
+        rows='10'
+        cols='20'
+        id='post-content'
+      >{{post.content}}</textarea>
+    </div>
+    <div class='form-group'>
+      <button
+        class='btn btn-primary'
+        value='{{post.id}}'
+        id='post-update'
+        type='submit'
+      >Submit</button>
+    </div>
+  </form>
 </section>
 
-<script src='../js/comment.js'></script>
+<script src='../../js/post-update.js'></script>
