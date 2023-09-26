@@ -11,6 +11,7 @@ Spin up a new blog post with spin blog, meetup up with others and spin up a comm
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Preview](#preview)
 - [License](#license)
 - [Tests](#tests)
 - [Questions](#questions)
@@ -25,6 +26,13 @@ Spin up a new blog post with spin blog, meetup up with others and spin up a comm
 1. Type `npm run source` to make sure database is sourced
 2. Type `npm run start` to start blog server
    Contributions are very welcomed, however please follow the below guidelines.
+
+## Preview
+
+[Heroku Deployed Link](https://spin-blog-7fccdc0cb2cd.herokuapp.com/)
+
+![Preview1](./preview1.png)
+![Preview2](./preview2.png)
 
 ## License
 
